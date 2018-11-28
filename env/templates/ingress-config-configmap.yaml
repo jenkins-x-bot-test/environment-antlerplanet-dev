@@ -1,0 +1,10 @@
+apiVersion: v1
+data:
+  domain: 35.233.106.173.nip.io
+  email: ""
+  exposer: Ingress
+  issuer: ""
+  tls: "false"
+kind: ConfigMap
+metadata:
+  creationTimestamp: null

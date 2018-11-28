@@ -1,0 +1,32 @@
+apiVersion: jenkins.io/v1
+kind: Environment
+metadata:
+  creationTimestamp: null
+  name: dev
+spec:
+  kind: Development
+  label: Development
+  namespace: jx
+  previewGitInfo:
+    user: {}
+  promotionStrategy: Never
+  source:
+    ref: master
+    url: https://github.com/jenkins-x-bot-test/environment-antlerplanet-dev.git
+  teamSettings:
+    buildPackName: kubernetes-workloads
+    buildPackRef: master
+    buildPackUrl: https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes.git
+    kubeProvider: gke
+    promotionEngine: Prow
+    quickstartLocations:
+    - excludes:
+      - WIP-*
+      gitKind: github
+      gitUrl: https://github.com
+      includes:
+      - '*'
+      owner: jenkins-x-quickstarts
+    useGitOps: true
+  webHookEngine: Prow
+status: {}

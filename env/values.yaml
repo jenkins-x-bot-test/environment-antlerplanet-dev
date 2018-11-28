@@ -1,0 +1,27 @@
+jenkins-x-platform:
+  PipelineSecrets:
+    DockerConfig: |-
+      {
+          "credHelpers": {
+              "gcr.io": "gcloud",
+              "us.gcr.io": "gcloud",
+              "eu.gcr.io": "gcloud",
+              "asia.gcr.io": "gcloud",
+              "staging-k8s.gcr.io": "gcloud"
+          }
+      }
+  expose:
+    Annotations:
+      helm.sh/hook: post-install,post-upgrade
+      helm.sh/hook-delete-policy: hook-succeeded
+    config:
+      domain: 35.233.106.173.nip.io
+      exposer: Ingress
+      http: "true"
+  jenkins:
+    Servers:
+      Global:
+        EnvVars:
+          TILLER_NAMESPACE: kube-system
+  postinstalljob:
+    enabled: "true"

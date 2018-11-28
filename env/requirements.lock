@@ -1,0 +1,6 @@
+dependencies:
+- name: jenkins-x-platform
+  repository: http://chartmuseum.jenkins-x.io
+  version: 0.0.2940
+digest: sha256:52818d729871f4fd9f1d1a884b3ba5a2695e446f0def1a547546e2e2076a0ad7
+generated: 2018-11-27T17:59:57.9757801Z
